@@ -8,7 +8,7 @@ const traverse = (root, options = {}) => {
   const visit = (node, parent) => {
     let res;
 
-    if (!node || !Array.isArray(node.childNodes) || typeof node.childNodes.length <= 0) {
+    if (!node) {
       return;
     }
 
@@ -16,7 +16,7 @@ const traverse = (root, options = {}) => {
       res = pre(node, parent);
     }
 
-    if (res !== false) {
+    if (res !== false && (Array.isArray(node.childNodes) && node.childNodes.length >= 0)) {
       node.childNodes.forEach((child) => {
         if (skipProperty && skipProperty(node)) {
           return;

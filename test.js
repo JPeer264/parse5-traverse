@@ -89,5 +89,5 @@ test('should traverse a html', (t) => {
     },
   });
 
-  t.is(traversed.length, 4);
+  t.is(traversed.length, 6);
 });
