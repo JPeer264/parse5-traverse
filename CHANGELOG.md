@@ -1,3 +1,7 @@
+1.0.1 - July, 09 2018
+
+* 6aadd16 Fix: do not throw if childNodes do not exist (JPeer264)
+
 1.0.0 - July, 08 2018
 
 * 3fba2ad Docs: add badges (JPeer264)
