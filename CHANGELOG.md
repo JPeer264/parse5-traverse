@@ -1,3 +1,7 @@
+1.0.2 - July, 09 2018
+
+* ba6f165 Fix: recognize last HTMl node without childNodes (JPeer264)
+
 1.0.1 - July, 09 2018
 
 * 6aadd16 Fix: do not throw if childNodes do not exist (JPeer264)
