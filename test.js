@@ -4,6 +4,14 @@ const { spy } = require('sinon');
 
 const traverse = require('./parse5-traverse');
 
+test('should do nothing', (t) => {
+  const pre = spy();
+
+  traverse(undefined, { pre });
+
+  t.falsy(pre.called);
+});
+
 test('should enter 5 elements', (t) => {
   const ast = parse5.parseFragment('<a><b><c></c></b></a><a2></a2>');
   let countPre = 0;
@@ -68,5 +76,18 @@ test('should traverse the correct order', (t) => {
   t.deepEqual(ast.childNodes[0], traversed[1]);
   t.deepEqual(ast.childNodes[0].childNodes[0], traversed[2]);
   t.deepEqual(ast.childNodes[1], traversed[3]);
+  t.is(traversed.length, 4);
+});
+
+test('should traverse a html', (t) => {
+  const ast = parse5.parse('<!DOCTYPE html><html><head></head><body>Hi there!</body></html>');
+  const traversed = [];
+
+  traverse(ast, {
+    pre(node) {
+      traversed.push(node);
+    },
+  });
+
   t.is(traversed.length, 4);
 });

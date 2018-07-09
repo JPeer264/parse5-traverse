@@ -8,7 +8,7 @@ const traverse = (root, options = {}) => {
   const visit = (node, parent) => {
     let res;
 
-    if (!node || typeof node.childNodes.length <= 0) {
+    if (!node || !Array.isArray(node.childNodes) || typeof node.childNodes.length <= 0) {
       return;
     }
 
