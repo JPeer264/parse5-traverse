@@ -79,6 +79,19 @@ test('should traverse the correct order', (t) => {
   t.is(traversed.length, 4);
 });
 
+test('should traverse template', (t) => {
+  const ast = parse5.parseFragment('<a><b><template><c></c></template></b></a><a2></a2>');
+  const traversed = [];
+
+  traverse(ast, {
+    pre(node) {
+      traversed.push(node);
+    },
+  });
+
+  t.is(traversed.length, 6);
+});
+
 test('should traverse a html', (t) => {
   const ast = parse5.parse('<!DOCTYPE html><html><head></head><body>Hi there!</body></html>');
   const traversed = [];
