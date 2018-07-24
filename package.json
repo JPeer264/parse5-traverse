@@ -1,6 +1,6 @@
 {
   "name": "parse5-traverse",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "simple but flexible parse5 AST traversal with pre and post visitors",
   "main": "parse5-traverse.js",
   "engines": {

@@ -1,3 +1,7 @@
+1.0.3 - July, 24 2018
+
+* 539cd92 Fix: traverse over template content (JPeer264)
+
 1.0.2 - July, 09 2018
 
 * ba6f165 Fix: recognize last HTMl node without childNodes (JPeer264)
